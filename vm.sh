@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # =============================
@@ -90,4 +90,5 @@ exec qemu-system-x86_64 \
     -device virtio-net-pci,netdev=n0 \
     -netdev user,id=n0,hostfwd=tcp::"$SSH_PORT"-:22 \
     -nographic -serial mon:stdio
+
 
